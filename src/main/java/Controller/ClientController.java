@@ -1,6 +1,7 @@
 package Controller;
 
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -8,6 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.Socket;
@@ -54,13 +56,29 @@ public class ClientController {
 
     public void btn_imogi_on_action(MouseEvent mouseEvent) {
         imogi_pane.setVisible(true);
-        
+
     }
 
     public void btn_cam_on_action(MouseEvent mouseEvent) {
+
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Image");
+        this.filePath = fileChooser.showOpenDialog(stage);
+        writer.println(lbl_name.getText() + " " + "img" + filePath.getPath());
     }
 
     public void btn_massage_send_on_action(MouseEvent mouseEvent) {
+
+        String msg = textChat.getText();
+        writer.println(lbl_name.getText() + ": " + msg);
+
+        textChat.clear();
+
+        if(msg.equalsIgnoreCase("BYE") || (msg.equalsIgnoreCase("logout"))) {
+            System.exit(0);
+
+        }
     }
 
     public void emo_pane_on_action(MouseEvent mouseEvent) {
