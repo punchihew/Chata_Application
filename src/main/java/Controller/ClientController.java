@@ -112,9 +112,17 @@ public class ClientController {
     }
 
     public void green_sad(MouseEvent mouseEvent) {
+
+        String emoji = new String(Character.toChars(128560));
+        textChat.setText(emoji);
+        imogi_pane.setVisible(false);
     }
 
     public void smile_one_eyy(MouseEvent mouseEvent) {
+
+        String emoji = new String(Character.toChars(128540));
+        textChat.setText(emoji);
+        imogi_pane.setVisible(false);
     }
 
     public void cry_yes(MouseEvent mouseEvent) {
