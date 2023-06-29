@@ -39,9 +39,22 @@ public class ClientController {
     }
 
     public void ChatOnAction(ActionEvent actionEvent) {
+
+        String msg = textChat.getText();
+        writer.println(lbl_name.getText() + ": " + msg);
+
+        textChat.clear();
+
+
+        if(msg.equalsIgnoreCase("BYE") || (msg.equalsIgnoreCase("logout"))) {
+            System.exit(0);
+
+        }
     }
 
     public void btn_imogi_on_action(MouseEvent mouseEvent) {
+        imogi_pane.setVisible(true);
+        
     }
 
     public void btn_cam_on_action(MouseEvent mouseEvent) {
