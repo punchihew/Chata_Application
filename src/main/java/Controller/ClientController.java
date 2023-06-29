@@ -1,13 +1,41 @@
 package Controller;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+
+import java.io.*;
+import java.net.Socket;
 
 public class ClientController {
+
+
+    public ScrollPane TxtMassageShowFeild;
+    public javafx.scene.layout.VBox VBox;
+    /* public static HBox h_box;*/
+    public TextField textChat;
+    public AnchorPane imogi_pane;
+    public Label lbl_name;
+
+    BufferedReader reader;
+    PrintWriter writer;
+    Socket socket;
+    private FileChooser fileChooser;
+    private File filePath;
+
+
+
     public void btn_logout_On_action(MouseEvent mouseEvent) {
+        System.exit(0);
     }
 
     public void Mouse_On_Click_Hide_Emogi(MouseEvent mouseEvent) {
+        imogi_pane.setVisible(false);
     }
 
     public void ChatOnAction(ActionEvent actionEvent) {
