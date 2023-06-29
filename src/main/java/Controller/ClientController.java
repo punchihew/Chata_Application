@@ -98,9 +98,17 @@ public class ClientController {
     }
 
     public void money(MouseEvent mouseEvent) {
+
+        String emoji = new String(Character.toChars(129297));
+        textChat.setText(emoji);
+        imogi_pane.setVisible(false);
     }
 
     public void love(MouseEvent mouseEvent) {
+
+        String emoji = new String(Character.toChars(128525));
+        textChat.setText(emoji);
+        imogi_pane.setVisible(false);
     }
 
     public void green_sad(MouseEvent mouseEvent) {
