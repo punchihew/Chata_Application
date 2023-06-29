@@ -2,16 +2,20 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000235;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
     <children>
         <AnchorPane prefHeight="66.0" prefWidth="600.0" style="-fx-background-color: #00B4D8;">
             <children>
-                <Label layoutX="205.0" layoutY="1.0" text="Live Chat">la
+                <Label layoutX="205.0" layoutY="1.0" text="Live Chat" textFill="#e8dada">la
                     <font>
                         <Font name="System Bold" size="44.0" />
                     </font>
@@ -22,7 +26,29 @@
                 <Image url="@../assept/icons8-user-100 (1).png" />
             </image>
         </ImageView>
-        <Label layoutX="163.0" layoutY="315.0" text="Enter Your Name" />
-        <TextField fx:id="userName" layoutX="164.0" layoutY="333.0" onAction="#NameOnAction" prefHeight="26.0" prefWidth="273.0" />
+        <Label layoutX="163.0" layoutY="315.0" text="Enter Your Name">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9684210419654846" green="0.9684210419654846" blue="0.9684210419654846" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.7058823704719543" blue="0.8470588326454163" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+        <TextField fx:id="userName" layoutX="191.0" layoutY="337.0" onAction="#NameOnAction" prefHeight="26.0" prefWidth="273.0" style="-fx-background-radius: 6;">
+         <effect>
+            <Reflection />
+         </effect></TextField>
     </children>
 </AnchorPane>
